@@ -1,50 +1,57 @@
 # 🚀 AI Powered Predictive Life Monitoring for Machine Critical Spares
 
-A real-time predictive maintenance system developed for conventional lathe machines using **Raspberry Pi Zero 2 W**, **IoT sensors**, **Machine Learning**, **MQTT**, and a **Unity-based Digital Twin**.
+![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
+![Raspberry Pi](https://img.shields.io/badge/Raspberry%20Pi-Zero%202W-C51A4A?logo=raspberrypi)
+![Unity](https://img.shields.io/badge/Unity-2022-black?logo=unity)
+![MQTT](https://img.shields.io/badge/MQTT-EMQX-orange)
+![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Random%20Forest-green)
 
-The system continuously monitors the condition of the lathe machine by acquiring vibration and temperature data from the tailstock region. The collected data is processed locally on the Raspberry Pi, analyzed using a machine learning model, and visualized in real time through an interactive Unity dashboard and Android application.
+A real-time predictive maintenance system for conventional lathe machines developed using **Raspberry Pi Zero 2 W**, **IoT sensors**, **Machine Learning**, **MQTT**, and a **Unity-based Digital Twin**.
 
----
-
-## 📌 Project Overview
-
-Traditional lathe machines are generally maintained using reactive or scheduled maintenance, which often leads to unexpected failures and production downtime. This project introduces a low-cost predictive maintenance solution capable of detecting abnormal machine behavior before major failures occur.
-
-The system performs real-time monitoring using vibration and temperature sensors, predicts machine condition using machine learning, estimates Remaining Useful Life (RUL), and presents all information through a digital twin dashboard.
+The system continuously monitors machine vibration and temperature from the tailstock region, processes the collected data locally on the Raspberry Pi, predicts machine health using a trained Random Forest model, estimates the Remaining Useful Life (RUL), and visualizes the results through an interactive Unity dashboard and Android application.
 
 ---
 
-## ✨ Features
+# 📌 Project Overview
+
+Conventional lathe machines are generally maintained using reactive or scheduled maintenance strategies, which often result in unexpected machine failures, increased maintenance costs, and production downtime. This project presents a low-cost predictive maintenance solution capable of continuously monitoring machine condition and identifying abnormal behaviour before critical failures occur.
+
+The Raspberry Pi Zero 2 W acts as the edge computing device, collecting vibration and temperature data from the ADXL345 and DS18B20 sensors. After preprocessing and feature extraction, a machine learning model predicts the machine condition and estimates its Remaining Useful Life (RUL). The processed information is transmitted using MQTT and visualized in real time through a Unity-based Digital Twin and Android application.
+
+---
+
+# ✨ Features
 
 - Real-time vibration monitoring using ADXL345
-- Temperature monitoring using DS18B20
+- Real-time temperature monitoring using DS18B20
 - Raspberry Pi Zero 2 W edge processing
-- MQTT-based real-time communication
+- Signal preprocessing and feature extraction
 - Machine Learning-based fault classification
 - Remaining Useful Life (RUL) estimation
+- MQTT-based real-time communication
 - Unity Digital Twin Dashboard
-- Android APK for mobile monitoring
-- Live machine status visualization
-- Fault indication using visual alerts
+- Android APK for portable monitoring
+- Live machine condition visualization
+- Visual fault indication
 
 ---
 
 # 🏗 System Architecture
 
 ```
-                ADXL345            DS18B20
-                   │                  │
-                   └──────────┬───────┘
-                              │
-                     Raspberry Pi Zero 2 W
-                              │
-               Signal Processing & Feature Extraction
-                              │
-                    Machine Learning Prediction
-                              │
-                       MQTT Communication
-                              │
-              Unity Digital Twin Dashboard / Android APK
+             ADXL345              DS18B20
+                │                    │
+                └──────────┬─────────┘
+                           │
+                Raspberry Pi Zero 2 W
+                           │
+      Signal Processing & Feature Extraction
+                           │
+             Random Forest Prediction
+                           │
+                   MQTT Communication
+                           │
+      Unity Digital Twin Dashboard / Android APK
 ```
 
 ---
@@ -53,17 +60,23 @@ The system performs real-time monitoring using vibration and temperature sensors
 
 ```
 Sensor Data Collection
-          ↓
+          │
+          ▼
 Signal Preprocessing
-          ↓
+          │
+          ▼
 Feature Extraction
-          ↓
+          │
+          ▼
 Machine Learning Prediction
-          ↓
+          │
+          ▼
 Remaining Useful Life Estimation
-          ↓
+          │
+          ▼
 MQTT Data Publishing
-          ↓
+          │
+          ▼
 Unity Digital Twin Visualization
 ```
 
@@ -82,27 +95,37 @@ Unity Digital Twin Visualization
 # 💻 Software & Technologies
 
 - Python
-- Raspberry Pi OS
-- Unity
-- MQTT
-- Machine Learning
+- Raspberry Pi OS Lite (64-bit)
+- Unity Engine
+- MQTT (EMQX Broker)
 - Scikit-learn
 - Pandas
 - NumPy
 - Paho MQTT
-- Git
+- Git & GitHub
+
+---
+
+# 💻 System Requirements
+
+- Raspberry Pi Zero 2 W
+- Raspberry Pi OS Lite (64-bit)
+- Python 3.11 or later
+- Unity 2022 LTS
+- EMQX MQTT Broker
 
 ---
 
 # 📂 Project Structure
 
 ```
-AI-Powered-Predictive-Life-Monitoring/
+AI-Powered-Predictive-Maintenance-for-Critical-Machine-Spares-in-CNC-Lathe-Machines/
 │
 ├── raspberry_pi/
 │   ├── s_v.py
 │   ├── requirements.txt
-│   └── lathe_model.pkl
+│   ├── lathe_model.pkl
+│   └── sv.service
 │
 ├── unity_dashboard/
 │   ├── Assets/
@@ -113,9 +136,9 @@ AI-Powered-Predictive-Life-Monitoring/
 │
 ├── datasets/
 │
-├── images/
-│
 ├── docs/
+│
+├── images/
 │
 └── README.md
 ```
@@ -124,27 +147,29 @@ AI-Powered-Predictive-Life-Monitoring/
 
 # ⚙ Installation
 
-Clone the repository
+### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/AI-Powered-Predictive-Life-Monitoring.git
+git clone https://github.com/Sanjay67789/AI-Powered-Predictive-Maintenance-for-Critical-Machine-Spares-in-CNC-Lathe-Machines.git
 
-cd AI-Powered-Predictive-Life-Monitoring
+cd AI-Powered-Predictive-Maintenance-for-Critical-Machine-Spares-in-CNC-Lathe-Machines
 ```
 
-Install dependencies
+### Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Run the Raspberry Pi application
+### Run Raspberry Pi Application
 
 ```bash
 python s_v.py
 ```
 
-Launch the Unity dashboard and connect it to the MQTT broker.
+### Launch Unity Dashboard
+
+Open the Unity project and connect it to the configured MQTT broker.
 
 ---
 
@@ -152,16 +177,16 @@ Launch the Unity dashboard and connect it to the MQTT broker.
 
 | Topic | Description |
 |---------|-------------|
-| vibration/1 | Vibration Data |
-| temp/1 | Temperature Data |
+| vibration/1 | Vibration Sensor Data |
+| temp/1 | Temperature Sensor Data |
 
 ---
 
 # 🤖 Machine Learning
 
-The collected vibration signal undergoes preprocessing and feature extraction before being analyzed using a Random Forest model.
+The vibration signal collected from the ADXL345 sensor undergoes preprocessing and feature extraction before being analyzed using a Random Forest classifier.
 
-Extracted Features include:
+### Extracted Features
 
 - Ax Standard Deviation
 - Ay Standard Deviation
@@ -170,49 +195,84 @@ Extracted Features include:
 - Ay Range
 - Az Range
 
-The model classifies machine condition into:
+### Machine States
 
-- Healthy
-- Warning
-- Critical
+- ✅ Healthy
+- ⚠ Warning
+- 🔴 Critical
 
-The system also estimates the Remaining Useful Life (RUL) based on vibration trends.
+The system also estimates the Remaining Useful Life (RUL) using vibration trend analysis.
 
 ---
 
-# 🖥 Unity Dashboard
+# 🖥 Unity Digital Twin
 
-The Unity dashboard functions as a Digital Twin of the physical lathe machine.
+The Unity application functions as a Digital Twin of the physical lathe machine by providing an intuitive visualization of real-time machine behaviour.
 
-It provides:
+### Dashboard Features
 
-- Live vibration values
+- Live vibration monitoring
 - Temperature monitoring
-- Machine status
-- Fault indication
-- Remaining Useful Life
-- Interactive user interface
+- Machine health status
+- Remaining Useful Life (RUL)
+- Visual fault indication
+- Interactive Digital Twin
 - Android APK deployment
 
 ---
 
 # 📱 Android Application
 
-The Unity project is exported as an Android APK, enabling portable monitoring of machine condition through a smartphone.
+The Unity project is also deployed as an Android APK, allowing users to monitor the machine remotely through a mobile device.
+
+---
+
+# 📊 Output
+
+The developed system successfully provides
+
+- Real-time vibration monitoring
+- Real-time temperature monitoring
+- Machine health prediction
+- Remaining Useful Life estimation
+- MQTT communication
+- Unity Digital Twin visualization
+- Android-based monitoring
+
+---
+
+# 🎯 Skills Demonstrated
+
+- Embedded Systems
+- Raspberry Pi
+- IoT
+- Sensor Interfacing
+- MQTT Communication
+- Machine Learning
+- Predictive Maintenance
+- Digital Twin
+- Unity Development
+- Python Programming
+- Edge Computing
 
 ---
 
 # 📸 Screenshots
 
-> Add screenshots inside the `images` folder and reference them here.
+Add screenshots inside the **images** folder.
 
 Example:
 
 ```
+images/hardware_setup.jpg
+
 images/dashboard.png
-images/setup.jpg
+
 images/mobile_app.png
+
 images/fault_detection.png
+
+images/system_architecture.png
 ```
 
 ---
@@ -220,36 +280,47 @@ images/fault_detection.png
 # 🚀 Future Enhancements
 
 - Multi-machine monitoring
-- Cloud integration
-- Advanced Deep Learning models
+- Cloud dashboard integration
+- Deep Learning-based fault prediction
+- Historical data analytics
+- Remote notification system
 - Additional industrial sensors
-- Historical analytics dashboard
-- Predictive maintenance notifications
+- Web dashboard support
 
 ---
 
 # 👨‍💻 Team
 
-**Project Title**
+### Project Title
 
-AI Powered Predictive Life Monitoring for Machine Critical Spares
+**AI Powered Predictive Life Monitoring for Machine Critical Spares**
 
-**Developed By**
+### Developed By
 
-- Sanjay Kumar P
-- Premkumar A
-- Rich Jewin A M
+- **Sanjay Kumar P** *(Team Lead)*
+- **Premkumar A**
+- **Rich Jewin A M**
+
+---
+
+# 📌 Project Status
+
+**✅ Completed**
+
+Developed as an undergraduate engineering project demonstrating the practical implementation of AI-assisted predictive maintenance using Raspberry Pi, Machine Learning, MQTT, and Unity Digital Twin technology.
 
 ---
 
 # 📜 License
 
-This project is developed for academic and research purposes.
+This project is developed for educational and research purposes.
 
 ---
 
+# 📬 Contact
 
-## 📬 Contact
+**Sanjay Kumar P**
 
-**Sanjay Kumar**
-- Email : sanjayk67789@gmail.com
+📧 Email: **sanjayk67789@gmail.com**
+
+🐙 GitHub: **https://github.com/Sanjay67789**
