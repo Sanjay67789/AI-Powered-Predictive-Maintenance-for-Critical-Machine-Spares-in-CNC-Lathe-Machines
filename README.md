@@ -236,8 +236,9 @@ AI Powered Predictive Life Monitoring for Machine Critical Spares
 
 **Developed By**
 
-- Sanjay Kumar
-- *(Add remaining team members here)*
+- Sanjay Kumar P
+- Premkumar A
+- Rich Jewin A M
 
 ---
 
@@ -247,18 +248,8 @@ This project is developed for academic and research purposes.
 
 ---
 
-# ⭐ Acknowledgements
-
-We acknowledge the guidance and support provided by our faculty members and institution during the development of this project.
-
----
 
 ## 📬 Contact
 
 **Sanjay Kumar**
-
-GitHub: https://github.com/yourusername
-
-LinkedIn: https://linkedin.com/in/yourprofile
-
-Email: your-email@example.com
+- Email : sanjayk67789@gmail.com
