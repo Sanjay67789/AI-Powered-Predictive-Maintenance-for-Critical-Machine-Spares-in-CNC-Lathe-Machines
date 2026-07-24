@@ -264,15 +264,13 @@ Add screenshots inside the **images** folder.
 Example:
 
 ```
-images/hardware_setup.jpg
+<img width="1028" height="593" alt="WPS Photos(1)" src="https://github.com/user-attachments/assets/2e3291a3-45d1-4202-ad20-2f84b7d4b0c8" />
+ -Lathe Mchine setup
+<img width="628" height="355" alt="image" src="https://github.com/user-attachments/assets/31b42e1b-143f-4c12-9f1c-fb47286cba1a" />
+-Unity 3d
+<img width="620" height="273" alt="image" src="https://github.com/user-attachments/assets/833376b4-1b39-4d5c-b353-e536700372ab" />
+-Android APK
 
-images/dashboard.png
-
-images/mobile_app.png
-
-images/fault_detection.png
-
-images/system_architecture.png
 ```
 
 ---
